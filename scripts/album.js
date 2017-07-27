@@ -1,4 +1,5 @@
-var albumPicasso = {
+var album = {
+  albumPicasso: {
     title: 'The Colors',
     artist: 'Pablo Picasso',
     label: 'Cubism',
@@ -9,11 +10,11 @@ var albumPicasso = {
       { title: 'Green', duration: '3:14' },
       { title: 'Red', duration: '5:01' },
       { title: 'Pink', duration: '3:21' },
-      { title: 'Magenta', duration: '2:15'}
+      { title: 'Magenta', duration: '2:15'},
     ]
-};
+},
 
-var albumMarconi = {
+ albumMarconi: {
      title: 'The Telephone',
      artist: 'Guglielmo Marconi',
      label: 'EM',
@@ -24,9 +25,28 @@ var albumMarconi = {
          { title: 'Ring, ring, ring', duration: '5:01' },
          { title: 'Fits in your pocket', duration: '3:21'},
          { title: 'Can you hear me now?', duration: '3:14' },
-         { title: 'Wrong phone number', duration: '2:15'}
+         { title: 'Wrong phone number', duration: '2:15'},
      ]
- };
+ },
+
+ albumDjango: {
+    title: 'Djangology',
+    artist: 'Django Reinhardt',
+    label: 'Not Now',
+    year: '1949',
+    albumArtUrl: 'assets/images/album_covers/django.jpg',
+    songs: [
+        { title: 'Minor Swing', duration: '2:37' },
+        { title: 'Beyond the sea', duration: '4:24' },
+        { title: 'Bricktop', duration: '3:45' },
+        { title: 'Honeysuckle rose', duration: '4:00' },
+        { title: 'Heavy artillery', duration: '3.41' },
+        { title: 'Djangology', duration: '2:19' }
+    ]
+
+}
+
+};
 
 
  var createSongRow = function(songNumber, songName, songLength) {
@@ -39,7 +59,7 @@ var albumMarconi = {
        ;
 
        return template;
- };
+ }
 
  var setCurrentAlbum = function(album) {
 
@@ -58,10 +78,16 @@ var albumMarconi = {
 
     for (var i = 0; i < album.songs.length; i++) {
       albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
-
     }
- };
+
+
+    albumImage.addEventListener('click', function(album) {
+            forEach(album, setCurrentAlbum);
+
+ });
+
+}
 
 window.onload = function() {
-    setCurrentAlbum(albumPicasso);
+    setCurrentAlbum(album.albumPicasso);
 }
