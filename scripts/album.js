@@ -80,10 +80,14 @@ var albumDjango = {
  };
 
 var findParentByClassName = function(element, targetClass) {
-     if (element) {
-         var currentParent = element.parentElement;
+ var currentParent = element.parentElement;
+     if (currentParent == null) {
+        console.log("No Parent found");
+     } else if (currentParent.className == undefined) {
+       console.log("No parent found with that class name");
+     } else {
          while (currentParent.className !== targetClass && currentParent.className !== null) {
-             currentParent = currentParent.parentElement;
+          currentParent = currentParent.parentElement;
          }
          return currentParent;
      }
