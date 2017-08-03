@@ -49,7 +49,7 @@ var albumDjango = {
  var createSongRow = function(songNumber, songName, songLength) {
     var template =
         '<tr class="album-view-song-item">'
-       +'  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
+       +'   <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
        +'   <td class="song-item-title">' + songName + '</td>'
        +'   <td class="song-item-duration">' + songLength + '</td>'
        +'</tr>'
@@ -143,14 +143,17 @@ window.onload = function() {
     setCurrentAlbum(albumPicasso);
 
 songListContainer.addEventListener('mouseover', function(event) {
-    if (event.target.parentElement.className === 'album-view-song-item') {
+    if (event.target.className === 'song-item-number') {
+
 
       var songItem = getSongItem(event.target);
 
       if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
           songItem.innerHTML = playButtonTemplate;
             }
-    }
+          }
+
+
 });
 
 for (var i = 0; i < songRows.length; i++) {
