@@ -3,7 +3,8 @@ body.album {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
-  background-size:cover;
+  background-size: cover;
+  padding-bottom: 200px;
 }
 
 .album-cover-art {
