@@ -56,7 +56,7 @@ var albumDjango = {
        ;
 
        var $row = $(template);
-       var tab = $("td");
+       
       var clickHandler = function() {
         var songNumber = $(this).attr('data-song-number');
 
