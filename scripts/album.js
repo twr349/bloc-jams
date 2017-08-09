@@ -170,3 +170,4 @@ var albumImage = document.getElementsByClassName('album-cover-art')[0];
               index = 0;
             }
       });
+//test
